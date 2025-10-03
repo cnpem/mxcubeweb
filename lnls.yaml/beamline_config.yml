@@ -22,19 +22,10 @@ objects:
   #
   # Hardware:
   - session: session.yaml
-  - data_publisher: data_publisher.yaml
   - machine_info: machine_info.yaml
   - detector: detector.yaml
   - beam: beam.yaml
-  - transmission: transmission.yaml
-  - flux: flux.yaml
-  - cryo: cryo.yaml
-  - energy: energy.yaml
-  - resolution: resolution.yaml
-  - safety_shutter: safety_shutter.yaml
-  - fast_shutter: fast_shutter.yaml
   - sample_changer: sample_changer.yaml
-  - sample_changer_maintenance: sample_changer_maint.yaml
 
   # The 2 lines up have to be used for SC and the 2 line below for the plate manipulator
   # - sample_changer: plate_manipulator.xml
@@ -51,19 +42,7 @@ objects:
 
   # Procedures:
   - beamline_actions: beamline_actions.yaml
-  - workflow: ednaparams.yaml
   - collect: mxcollect.yaml
-  - xrf_spectrum: xrf.yaml
-  - energy_scan: energy_scan.yaml
-  - gphl_connection: gphl/gphl-setup.yaml
-  - gphl_workflow: gphl/gphl-workflow.yaml
-  - xray_centring: xray_centring2.yaml
-  - xml_rpc_server: xml_rpc_server.yaml
-
-  # Analysis:
-  - offline_processing: auto_processing.yaml
-  - online_processing: parallel_processing.yaml
-  - characterisation: characterisation.yaml
 
 configuration:
   advanced_methods:
@@ -142,18 +121,11 @@ configuration:
 
   available_methods:
     datacollection: true
-    characterisation: true
-    helical: true
-    xrf_spectrum: true
-    energy_scan: true
+    characterisation: false
+    helical: false
+    xrf_spectrum: false
+    energy_scan: false
     mesh: true
-    ssx_chip_collection: true
-    gphlworkflow: true
-    test_collection: true
-
-    undulators:
-      - type: PPU35C_GAP
-        device_uri: //orion:10000/id/id/30
-
-      - type: PPU35D_GAP
-        device_uri: //orion:10000/id/id/30
+    ssx_chip_collection: false
+    gphlworkflow: false
+    test_collection: false
