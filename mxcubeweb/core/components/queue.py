@@ -1288,6 +1288,8 @@ class Queue(ComponentBase):
         # Set element, and if any, other parameters
         model.element_symbol = params.get("element", "")
         model.edge = params.get("edge", "")
+        model.number_of_steps = params.get("number_of_steps", "")
+        model.expousure_time = params.get("expousure_time", "")
 
         # MXCuBE Web specific shape attribute
         model.shape = params["shape"]

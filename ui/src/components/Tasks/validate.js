@@ -128,6 +128,24 @@ function validate(values, props) {
     });
   }
 
+  if (
+    !(
+      Number.isInteger(Number(values.number_of_steps)) &&
+      values.number_of_steps.trim() !== ""
+    )
+  ) {
+    errors.number_of_steps = 'Invalid number of steps';
+  }
+
+  if (
+    !(
+      !Number.isNaN(Number.parseFloat(values.expousure_time)) &&
+      Number.isFinite(Number.parseFloat(values.expousure_time))
+    )
+  ) {
+    errors.expousure_time = 'Invalid expousure time';
+  }
+
   return errors;
 }
 

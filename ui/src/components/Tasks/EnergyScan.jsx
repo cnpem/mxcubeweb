@@ -49,6 +49,8 @@ class EnergyScan extends React.Component {
       'suffix',
       'element',
       'edge',
+      'number_of_steps',
+      'expousure_time'
     ];
 
     this.props.addTask(parameters, stringFields, runNow);
@@ -119,6 +121,12 @@ class EnergyScan extends React.Component {
             </Row>
             <Row className="mb-2 mt-3 d-flex">
               <InputField propName="edge" label="Edge" col1="4" col2="2" />
+            </Row>
+            <Row className="mb-2 mt-3 d-flex">
+              <InputField propName="number_of_steps" label="Number Of Steps" col1="4" col2="2" />
+            </Row>
+            <Row className="mb-2 mt-3 d-flex">
+              <InputField propName="expousure_time" label="Expousure Time" col1="4" col2="2" />
             </Row>
           </Form>
         </Modal.Body>
