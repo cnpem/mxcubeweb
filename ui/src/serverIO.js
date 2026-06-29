@@ -39,6 +39,7 @@ import {
 } from './actions/sampleChanger';
 import { updateSampleState } from './actions/sampleGrid';
 import {
+  abortCentring,
   saveMotorPosition,
   setBeamInfo,
   setCurrentPhase,
@@ -139,6 +140,10 @@ class ServerIO {
 
     this.hwrSocket.on('update_shapes', (record) => {
       dispatch(setShapes(record.shapes));
+    });
+
+    this.hwrSocket.on('abort_centring', () => {
+      dispatch(abortCentring());
     });
 
     this.hwrSocket.on('update_pixels_per_mm', (record) => {
